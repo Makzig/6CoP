@@ -86,7 +86,6 @@ __meta__ = {
 
 [node name="Finish" parent="." instance=ExtResource( 13 )]
 position = Vector2( 176, 336 )
-level = "res://Scenes/Levels/Main.tscn"
 
 [node name="Moveable Block2" parent="." instance=ExtResource( 18 )]
 position = Vector2( 424, 208 )

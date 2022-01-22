@@ -75,18 +75,6 @@ flags = 4
 atlas = ExtResource( 16 )
 region = Rect2( 267, 355, 63, 14 )
 
-[sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=7]
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=8]
-font_data = ExtResource( 18 )
-
-[sub_resource type="DynamicFont" id=9]
-font_data = ExtResource( 18 )
-
 [sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 19 )
 region = Rect2( 264, 400, 62, 15 )
@@ -686,6 +674,18 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5 )
 }
 
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 18 )
+
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -820,6 +820,20 @@ texture = ExtResource( 21 )
 texture_scale = 1.39
 energy = 0.0
 
+[node name="Start_animation" type="AnimationPlayer" parent="."]
+anims/Exit_focus = SubResource( 49 )
+anims/Levels_focus = SubResource( 46 )
+anims/Play_pressed = SubResource( 17 )
+anims/RESET = SubResource( 18 )
+anims/Setting_focus = SubResource( 22 )
+
+[node name="Finished_animation" type="AnimationPlayer" parent="."]
+anims/Exit_focus_exiting = SubResource( 58 )
+anims/Levels_focus_exit = SubResource( 56 )
+anims/Play_focus_exit = SubResource( 51 )
+anims/RESET = SubResource( 52 )
+anims/Settings_Focus_exit = SubResource( 54 )
+
 [node name="Settings_popup" type="Popup" parent="."]
 visible = true
 anchor_right = 1.0
@@ -831,10 +845,6 @@ __meta__ = {
 [node name="Background" type="ColorRect" parent="Settings_popup"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 66.0
-margin_top = 4.0
-margin_right = 66.0
-margin_bottom = 4.0
 rect_pivot_offset = Vector2( 2136, 416 )
 color = Color( 0.141176, 0.0156863, 0.180392, 1 )
 __meta__ = {
@@ -1025,20 +1035,6 @@ margin_bottom = 534.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Start_animation" type="AnimationPlayer" parent="."]
-anims/Exit_focus = SubResource( 49 )
-anims/Levels_focus = SubResource( 46 )
-anims/Play_pressed = SubResource( 17 )
-anims/RESET = SubResource( 18 )
-anims/Setting_focus = SubResource( 22 )
-
-[node name="Finished_animation" type="AnimationPlayer" parent="."]
-anims/Exit_focus_exiting = SubResource( 58 )
-anims/Levels_focus_exit = SubResource( 56 )
-anims/Play_focus_exit = SubResource( 51 )
-anims/RESET = SubResource( 52 )
-anims/Settings_Focus_exit = SubResource( 54 )
 
 [connection signal="focus_entered" from="Menu/Menu_label/Play" to="." method="_on_Play_focus_entered"]
 [connection signal="focus_exited" from="Menu/Menu_label/Play" to="." method="_on_Play_focus_exited"]
