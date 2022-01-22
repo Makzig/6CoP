@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends ColorRect
+
+var n = false
+var shade = 0.4
+var how_black = 1
+
+func _ready():
+	visible = true
+	noblack()
+	n = false
+func noblack():
+	while how_black > 0:
+		how_black -= 0.01
+		yield(get_tree().create_timer(0.01), \"timeout\")
+		color = Color(0, 0, 0, how_black)
+		
+
+
+func pause():
+	if get_tree().paused == true:
+		color = Color(0, 0, 0, shade)
+		n = true
+	elif get_tree().paused == false && n == true:
+		color = Color(0, 0, 0, 0)
+	
+func _process(_delta):
+	pause()
+"
+
+[node name="BlackScreen" type="ColorRect"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color( 0, 0, 0, 1 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]

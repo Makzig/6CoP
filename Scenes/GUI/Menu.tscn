@@ -1,0 +1,1054 @@
+[gd_scene load_steps=51 format=2]
+
+[ext_resource path="res://Texturs/8293dc1596096d62.png" type="Texture" id=1]
+[ext_resource path="res://Texturs/4 анимация.png" type="Texture" id=2]
+[ext_resource path="res://Texturs/5 анимация.png" type="Texture" id=3]
+[ext_resource path="res://Texturs/6 анимация.png" type="Texture" id=4]
+[ext_resource path="res://Texturs/1 анимация.png" type="Texture" id=5]
+[ext_resource path="res://Texturs/11 анимация.png" type="Texture" id=6]
+[ext_resource path="res://Texturs/7 анимация.png" type="Texture" id=7]
+[ext_resource path="res://Texturs/10 анимация.png" type="Texture" id=8]
+[ext_resource path="res://Texturs/12 анимация.png" type="Texture" id=9]
+[ext_resource path="res://Texturs/3 анимация.png" type="Texture" id=10]
+[ext_resource path="res://Texturs/8 анимация.png" type="Texture" id=11]
+[ext_resource path="res://Texturs/2 анимация.png" type="Texture" id=12]
+[ext_resource path="res://Texturs/9 анимация.png" type="Texture" id=13]
+[ext_resource path="res://Texturs/13 анимация.png" type="Texture" id=14]
+[ext_resource path="res://Texturs/14 анимация.png" type="Texture" id=15]
+[ext_resource path="res://Texturs/38527378eb60aab4.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=17]
+[ext_resource path="res://Fonts/Pixel Times Bold.ttf" type="DynamicFontData" id=18]
+[ext_resource path="res://Texturs/Button_pressed.png" type="Texture" id=19]
+[ext_resource path="res://Texturs/Settings_button.png" type="Texture" id=20]
+[ext_resource path="res://Texturs/4light.png" type="Texture" id=21]
+[ext_resource path="res://Texturs/6light.png" type="Texture" id=22]
+
+[sub_resource type="AnimatedTexture" id=1]
+flags = 4
+frames = 14
+fps = 12.0
+frame_0/texture = ExtResource( 5 )
+frame_1/texture = ExtResource( 12 )
+frame_1/delay_sec = 0.0
+frame_2/texture = ExtResource( 10 )
+frame_2/delay_sec = 0.0
+frame_3/texture = ExtResource( 2 )
+frame_3/delay_sec = 0.0
+frame_4/texture = ExtResource( 3 )
+frame_4/delay_sec = 0.0
+frame_5/texture = ExtResource( 4 )
+frame_5/delay_sec = 0.0
+frame_6/texture = ExtResource( 7 )
+frame_6/delay_sec = 0.0
+frame_7/texture = ExtResource( 11 )
+frame_7/delay_sec = 0.0
+frame_8/texture = ExtResource( 13 )
+frame_8/delay_sec = 0.0
+frame_9/texture = ExtResource( 8 )
+frame_9/delay_sec = 0.0
+frame_10/texture = ExtResource( 6 )
+frame_10/delay_sec = 0.0
+frame_11/texture = ExtResource( 9 )
+frame_11/delay_sec = 0.0
+frame_12/texture = ExtResource( 14 )
+frame_12/delay_sec = 0.0
+frame_13/texture = ExtResource( 15 )
+frame_13/delay_sec = 0.0
+
+[sub_resource type="AtlasTexture" id=47]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 239, 187, 114, 14 )
+
+[sub_resource type="AtlasTexture" id=44]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 241, 253, 106, 15 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 260, 223, 69, 12 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 267, 355, 63, 14 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 18 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 18 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 19 )
+region = Rect2( 264, 400, 62, 15 )
+
+[sub_resource type="Animation" id=49]
+resource_name = "Exit_focus"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/VBoxContainer/Exit:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ SubResource( 5 ), SubResource( 48 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Menu/VBoxContainer/Exit/Light2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu/VBoxContainer/Exit/Light2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 19 )
+region = Rect2( 259, 184, 70, 12 )
+
+[sub_resource type="Animation" id=46]
+resource_name = "Levels_focus"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/VBoxContainer/Levels:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 45 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Menu/VBoxContainer/Levels/Light2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Menu/VBoxContainer/Levels/Light2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 19 )
+region = Rect2( 239, 133, 114, 14 )
+
+[sub_resource type="Animation" id=17]
+resource_name = "Play_focus_exit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/Menu_label/Play:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ SubResource( 47 ), SubResource( 16 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Menu/Menu_label/Play/Light2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Menu/Menu_label/Play/Light2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 16 )
+region = Rect2( 237, 186, 117, 14 )
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/Menu_label/Play:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 14 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Menu/Menu_label/Play/Light2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu/Menu_label/Settings:icon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 44 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Menu/Menu_label/Settings/Light2D:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Menu/VBoxContainer/Levels:icon")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 3 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Menu/VBoxContainer/Levels/Light2D:enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Menu/VBoxContainer/Levels/Light2D:energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Menu/VBoxContainer/Exit:icon")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 5 ) ]
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("Menu/VBoxContainer/Exit/Light2D:energy")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Menu/VBoxContainer/Exit/Light2D:enabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 19 )
+region = Rect2( 243, 230, 103, 15 )
+
+[sub_resource type="Animation" id=22]
+resource_name = "Setting_focus"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/Menu_label/Settings:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 21 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Menu/Menu_label/Settings/Light2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1.5, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu/Menu_label/Settings/Light2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 19 )
+region = Rect2( 265, 401, 60, 14 )
+
+[sub_resource type="Animation" id=58]
+resource_name = "Exit_focus_exiting"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/VBoxContainer/Exit/Light2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Menu/VBoxContainer/Exit/Light2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1.5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu/VBoxContainer/Exit:icon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ SubResource( 57 ), SubResource( 5 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 19 )
+region = Rect2( 259, 184, 70, 12 )
+
+[sub_resource type="Animation" id=56]
+resource_name = "Levels_focus_exit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/VBoxContainer/Levels:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ SubResource( 55 ), SubResource( 3 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Menu/VBoxContainer/Levels/Light2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1.5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu/VBoxContainer/Levels/Light2D:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 19 )
+region = Rect2( 240, 134, 114, 12 )
+
+[sub_resource type="Animation" id=51]
+resource_name = "Play_focus_exit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/Menu_label/Play:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ SubResource( 50 ), SubResource( 47 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Menu/Menu_label/Play/Light2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Menu/Menu_label/Play/Light2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.4 )
+}
+
+[sub_resource type="Animation" id=52]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/Menu_label/Play:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 47 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Menu/Menu_label/Play/Light2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Menu/Menu_label/Play/Light2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Menu/Menu_label/Settings:icon")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 44 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Menu/Menu_label/Settings/Light2D:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Menu/Menu_label/Settings/Light2D:energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Menu/VBoxContainer/Levels:icon")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 3 ) ]
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Menu/VBoxContainer/Levels/Light2D:energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Menu/VBoxContainer/Levels/Light2D:enabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Menu/VBoxContainer/Exit/Light2D:enabled")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("Menu/VBoxContainer/Exit/Light2D:energy")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Menu/VBoxContainer/Exit:icon")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ SubResource( 5 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 19 )
+region = Rect2( 243, 230, 103, 15 )
+
+[sub_resource type="Animation" id=54]
+resource_name = "Settings_Focus_exit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Menu/Menu_label/Settings:icon")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ SubResource( 53 ), SubResource( 44 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Menu/Menu_label/Settings/Light2D:enabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Menu/Menu_label/Settings/Light2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5 )
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -540.0
+margin_bottom = 5.0
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu_label" type="VBoxContainer" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -46.0
+margin_top = -98.5
+margin_right = 83.0
+margin_bottom = 0.5
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="Menu/Menu_label"]
+margin_top = 27.0
+margin_right = 129.0
+margin_bottom = 47.0
+focus_neighbour_top = NodePath("../../VBoxContainer/Exit")
+icon = SubResource( 47 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Light2D" type="Light2D" parent="Menu/Menu_label/Play"]
+position = Vector2( 65, 8.5 )
+texture = ExtResource( 21 )
+color = Color( 0.694118, 0.631373, 0.631373, 1 )
+energy = 0.0
+
+[node name="Settings" type="Button" parent="Menu/Menu_label"]
+margin_top = 51.0
+margin_right = 129.0
+margin_bottom = 72.0
+icon = SubResource( 44 )
+flat = true
+
+[node name="Light2D" type="Light2D" parent="Menu/Menu_label/Settings"]
+position = Vector2( 61.5, 13 )
+enabled = false
+texture = ExtResource( 20 )
+color = Color( 0.886275, 0.772549, 0.772549, 1 )
+energy = 0.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -25.0
+margin_top = -24.5
+margin_right = 56.0
+margin_bottom = 60.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Levels" type="Button" parent="Menu/VBoxContainer"]
+margin_right = 81.0
+margin_bottom = 20.0
+icon = SubResource( 3 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Light2D" type="Light2D" parent="Menu/VBoxContainer/Levels"]
+position = Vector2( 32, 10 )
+enabled = false
+texture = ExtResource( 22 )
+energy = 0.0
+
+[node name="Exit" type="Button" parent="Menu/VBoxContainer"]
+margin_top = 24.0
+margin_right = 81.0
+margin_bottom = 44.0
+focus_neighbour_bottom = NodePath("../../Menu_label/Play")
+icon = SubResource( 5 )
+flat = true
+
+[node name="Light2D" type="Light2D" parent="Menu/VBoxContainer/Exit"]
+position = Vector2( 37.5, 10 )
+scale = Vector2( 0.418165, 0.586331 )
+texture = ExtResource( 21 )
+texture_scale = 1.39
+energy = 0.0
+
+[node name="Settings_popup" type="Popup" parent="."]
+visible = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Settings_popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 66.0
+margin_top = 4.0
+margin_right = 66.0
+margin_bottom = 4.0
+rect_pivot_offset = Vector2( 2136, 416 )
+color = Color( 0.141176, 0.0156863, 0.180392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" type="Label" parent="Settings_popup"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -150.0
+margin_top = 42.0
+margin_right = -73.0
+margin_bottom = 79.0
+rect_scale = Vector2( 4, 4 )
+custom_fonts/font = SubResource( 6 )
+text = "Settings
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Video" type="Label" parent="Settings_popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 350.0
+margin_top = 303.0
+margin_right = -1515.0
+margin_bottom = -740.0
+rect_scale = Vector2( 4, 4 )
+custom_fonts/font = SubResource( 7 )
+text = "Video
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound_box" type="VBoxContainer" parent="Settings_popup"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -481.0
+margin_top = 456.0
+margin_right = -421.0
+margin_bottom = -564.0
+rect_scale = Vector2( 4, 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music_scroll" type="ProgressBar" parent="Settings_popup/Sound_box"]
+margin_right = 60.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="Settings_popup/Sound_box/Music_scroll"]
+anchor_left = -1.09583
+anchor_top = -5.33333
+anchor_right = -1.09583
+anchor_bottom = -5.33333
+margin_top = 64.0
+margin_right = 88.0
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 8 )
+text = "Music
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="All_sound" type="ProgressBar" parent="Settings_popup/Sound_box"]
+margin_top = 18.0
+margin_right = 60.0
+margin_bottom = 32.0
+
+[node name="Label2" type="Label" parent="Settings_popup/Sound_box/All_sound"]
+anchor_left = -0.604167
+anchor_top = -4.0
+anchor_right = -0.604167
+anchor_bottom = -4.0
+margin_top = 48.0
+margin_right = 88.0
+margin_bottom = 85.0
+custom_fonts/font = SubResource( 8 )
+text = "All
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="InterFace_sound" type="HScrollBar" parent="Settings_popup/Sound_box"]
+margin_top = 36.0
+margin_right = 60.0
+margin_bottom = 48.0
+
+[node name="Label3" type="Label" parent="Settings_popup/Sound_box/InterFace_sound"]
+margin_left = -65.75
+margin_top = 12.0
+margin_right = 22.25
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 8 )
+text = "Sound
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sound_scroll" type="HScrollBar" parent="Settings_popup/Sound_box"]
+margin_top = 52.0
+margin_right = 60.0
+margin_bottom = 64.0
+
+[node name="Label4" type="Label" parent="Settings_popup/Sound_box/Sound_scroll"]
+anchor_left = -1.42083
+anchor_top = -3.0
+anchor_right = -1.42083
+anchor_bottom = -3.0
+margin_top = 16.0
+margin_right = 88.0
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 8 )
+text = "Interface
+"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Sound" type="Label" parent="Settings_popup"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -586.0
+margin_top = 300.0
+margin_right = -527.0
+margin_bottom = -743.0
+rect_scale = Vector2( 4, 4 )
+custom_fonts/font = SubResource( 9 )
+text = "Sound
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Video_Box" type="VBoxContainer" parent="Settings_popup"]
+margin_left = 314.0
+margin_top = 456.0
+margin_right = 406.0
+margin_bottom = 524.0
+rect_scale = Vector2( 3, 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fullscreen" type="Button" parent="Settings_popup/Video_Box"]
+margin_right = 92.0
+margin_bottom = 20.0
+focus_neighbour_top = NodePath("../Button3")
+focus_neighbour_right = NodePath("../../Sound_box/Music_scroll")
+text = "Fullscreen"
+
+[node name="Button2" type="Button" parent="Settings_popup/Video_Box"]
+margin_top = 24.0
+margin_right = 92.0
+margin_bottom = 44.0
+
+[node name="Button3" type="Button" parent="Settings_popup/Video_Box"]
+margin_top = 48.0
+margin_right = 92.0
+margin_bottom = 68.0
+focus_neighbour_bottom = NodePath("../Fullscreen")
+
+[node name="Horizontal_line" type="ColorRect" parent="Settings_popup"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -240.0
+margin_bottom = -237.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Line" type="ColorRect" parent="Settings_popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = -440.0
+margin_right = 3.0
+margin_bottom = 534.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start_animation" type="AnimationPlayer" parent="."]
+anims/Exit_focus = SubResource( 49 )
+anims/Levels_focus = SubResource( 46 )
+anims/Play_pressed = SubResource( 17 )
+anims/RESET = SubResource( 18 )
+anims/Setting_focus = SubResource( 22 )
+
+[node name="Finished_animation" type="AnimationPlayer" parent="."]
+anims/Exit_focus_exiting = SubResource( 58 )
+anims/Levels_focus_exit = SubResource( 56 )
+anims/Play_focus_exit = SubResource( 51 )
+anims/RESET = SubResource( 52 )
+anims/Settings_Focus_exit = SubResource( 54 )
+
+[connection signal="focus_entered" from="Menu/Menu_label/Play" to="." method="_on_Play_focus_entered"]
+[connection signal="focus_exited" from="Menu/Menu_label/Play" to="." method="_on_Play_focus_exited"]
+[connection signal="pressed" from="Menu/Menu_label/Play" to="." method="_on_Play_pressed"]
+[connection signal="focus_entered" from="Menu/Menu_label/Settings" to="." method="_on_Settings_focus_entered"]
+[connection signal="focus_exited" from="Menu/Menu_label/Settings" to="." method="_on_Settings_focus_exited"]
+[connection signal="pressed" from="Menu/Menu_label/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="focus_entered" from="Menu/VBoxContainer/Levels" to="." method="_on_Levels_focus_entered"]
+[connection signal="focus_exited" from="Menu/VBoxContainer/Levels" to="." method="_on_Levels_focus_exited"]
+[connection signal="focus_entered" from="Menu/VBoxContainer/Exit" to="." method="_on_Exit_focus_entered"]
+[connection signal="focus_exited" from="Menu/VBoxContainer/Exit" to="." method="_on_Exit_focus_exited"]
+[connection signal="pressed" from="Menu/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Settings_popup/Video_Box/Fullscreen" to="." method="_on_Fullscreen_pressed"]

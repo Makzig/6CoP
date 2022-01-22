@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Texturs/kek34.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+export var level = \"\"
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group(\"Player\"):
+		get_tree().change_scene(\"res://Scenes/GUI/LevelMap.tscn\")
+"
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 16.0
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.390244, 0.894737 )
+colors = PoolColorArray( 0.171387, 0.355236, 0.84375, 1, 0.0738525, 0.475541, 0.945313, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 1
+emission_sphere_radius = 9.53
+flag_disable_z = true
+gravity = Vector3( 0, -40, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 4 )
+
+[node name="Finish" type="Area2D"]
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 176, 65, 32, 30 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 0, -6 )
+scale = Vector2( 1.5, 1.5 )
+amount = 20
+process_material = SubResource( 5 )
+
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]

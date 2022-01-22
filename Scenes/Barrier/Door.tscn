@@ -1,0 +1,209 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Scripts/Door.gd" type="Script" id=1]
+[ext_resource path="res://Texturs/kek34.png" type="Texture" id=2]
+[ext_resource path="res://Texturs/5_p_3.png" type="Texture" id=3]
+[ext_resource path="res://Sound/mejkomnatnaya-dver.mp3" type="AudioStream" id=4]
+[ext_resource path="res://Fonts/Pixel Times.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 240, 32, 32 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "close"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 19 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 112, 240, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 144, 240, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 176, 240, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 208, 240, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+
+[sub_resource type="Animation" id=5]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 256, 32, 32 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "v_close"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 6 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 2 )
+region = Rect2( 112, 256, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 160, 256, 32, 32 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "v_open"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ SubResource( 8 ), SubResource( 14 ), SubResource( 8 ), SubResource( 15 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 18.5958, 18.2462 )
+
+[sub_resource type="Animation" id=16]
+resource_name = "Popup_show"
+length = 0.7
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Label:margin_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -40, -0.25, 0, 0.25, 0, -50, -0.25, 0, 0.25, 0, -40, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Label:margin_top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="DynamicFont" id=11]
+size = 19
+font_data = ExtResource( 5 )
+
+[sub_resource type="CircleShape2D" id=18]
+radius = 52.1311
+
+[node name="Door" type="Area2D"]
+collision_mask = 2
+script = ExtResource( 1 )
+X_and_Y = "Vertical"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/close = SubResource( 3 )
+anims/open = SubResource( 5 )
+anims/v_close = SubResource( 7 )
+anims/v_open = SubResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 20 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource( 10 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = 8.32
+max_distance = 160.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.75
+
+[node name="Label2" type="AnimationPlayer" parent="."]
+autoplay = "Popup_show"
+anims/Popup_show = SubResource( 16 )
+anims/RESET = SubResource( 17 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -9.40111
+margin_right = 12.5989
+margin_bottom = -20.7958
+grow_horizontal = 2
+grow_vertical = 0
+custom_colors/font_color = Color( 0.921569, 1, 0, 0.588235 )
+custom_fonts/font = SubResource( 11 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label_area"]
+shape = SubResource( 18 )
+
+[connection signal="body_entered" from="." to="." method="_on_Door_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Label_area" to="." method="_on_Label_area_body_entered"]
+[connection signal="body_exited" from="Label_area" to="." method="_on_Label_area_body_exited"]

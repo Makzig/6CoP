@@ -1,0 +1,282 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Scripts/Laser.gd" type="Script" id=1]
+[ext_resource path="res://Sound/laser.wav" type="AudioStream" id=2]
+[ext_resource path="res://Texturs/Sprites2.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 4 )
+region = Rect2( 155, 176, 10, 14 )
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 4 )
+region = Rect2( 112, 170, 31, 12 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends RayCast2D
+
+var cast_point = Vector2.ZERO
+
+var is_casting := false setget set_is_casting
+
+func _ready() -> void:
+	set_physics_process(false)
+	$Line2D.points[1] = Vector2.ZERO
+
+func shoot(x):
+	self.is_casting = x
+
+func _physics_process(_delta: float) -> void:
+	cast_point = cast_to
+	force_raycast_update()
+	
+	
+	$ColisionParticles2D.emitting = is_colliding()
+	
+	if is_colliding():
+			cast_point = to_local(get_collision_point())
+			$ColisionParticles2D.global_rotation = get_collision_normal().angle()
+	$ColisionParticles2D.global_position = get_collision_point()
+	$Line2D.points[1] = cast_point
+	$Area2D/CollisionPolygon2D.polygon[1].y = to_local(get_collision_point()).y
+	
+
+func set_is_casting(cast: bool) -> void:
+	is_casting = cast
+	$CastingParticles2D.emitting = is_casting
+	yield(get_tree().create_timer(0.05), \"timeout\")
+	$Area2D/CollisionPolygon2D.disabled = not is_casting
+	if is_casting:
+		appear()
+	else:
+		$ColisionParticles2D.emitting = false
+		disappear()
+	
+	set_physics_process(is_casting)
+
+func appear() -> void:
+	$Tween.stop_all()
+	$Tween.interpolate_property($Line2D, \"width\", 0, 5.0, 0.2)
+	$Tween.start()
+
+func disappear() -> void:
+	$Tween.stop_all()
+	$Tween.interpolate_property($Line2D, \"width\", 5.0, 0, 0.1)
+	$Tween.start()
+"
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.620155, 1 )
+colors = PoolColorArray( 1, 0, 0, 1, 0.660156, 0, 0, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.481818 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="Curve" id=7]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.572368, 0.892045 ), 0.56529, 0.56529, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=8]
+curve = SubResource( 7 )
+
+[sub_resource type="ParticlesMaterial" id=9]
+trail_size_modifier = SubResource( 8 )
+emission_shape = 1
+emission_sphere_radius = 3.0
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 93.02
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
+
+[sub_resource type="Gradient" id=10]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+flag_disable_z = true
+spread = 85.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 11 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 15.624, 4.14861 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 160, 106, 31, 12 )
+
+[sub_resource type="Animation" id=15]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 14 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
+region = Rect2( 112, 138, 31, 12 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 160, 138, 31, 12 )
+
+[sub_resource type="Animation" id=18]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ SubResource( 16 ), SubResource( 17 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 1 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=20]
+animation = "Attack"
+
+[sub_resource type="AnimationNodeAnimation" id=21]
+animation = "idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachine" id=24]
+states/Attack/node = SubResource( 20 )
+states/Attack/position = Vector2( 213, 84 )
+states/idle/node = SubResource( 21 )
+states/idle/position = Vector2( 350, 84 )
+transitions = [ "Attack", "idle", SubResource( 22 ), "idle", "Attack", SubResource( 23 ) ]
+start_node = "idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=25]
+
+[node name="Laser" type="StaticBody2D"]
+z_index = 1
+collision_layer = 4
+collision_mask = 5
+script = ExtResource( 1 )
+Len_of_shoot = 1.0
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( -0.0701542, 7.22584 )
+texture = SubResource( 26 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Sprite"]
+position = Vector2( 8.7, 0 )
+rotation = -1.57079
+cast_to = Vector2( 0, 1000 )
+collision_mask = 9
+script = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Sprite/RayCast2D" groups=["Enemy", "Laser"]]
+collision_layer = 4
+collision_mask = 9
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/RayCast2D/Area2D"]
+build_mode = 1
+polygon = PoolVector2Array( 0, 0, 0, 50 )
+disabled = true
+
+[node name="Line2D" type="Line2D" parent="Sprite/RayCast2D"]
+z_index = 2
+points = PoolVector2Array( 0, 7, 0, 120 )
+width = 0.2
+default_color = Color( 1, 0, 0, 1 )
+joint_mode = 2
+begin_cap_mode = 1
+end_cap_mode = 2
+
+[node name="Tween" type="Tween" parent="Sprite/RayCast2D"]
+
+[node name="CastingParticles2D" type="Particles2D" parent="Sprite/RayCast2D"]
+position = Vector2( 0, 6 )
+z_index = 2
+emitting = false
+amount = 25
+lifetime = 0.1
+process_material = SubResource( 9 )
+
+[node name="ColisionParticles2D" type="Particles2D" parent="Sprite/RayCast2D"]
+position = Vector2( -6.29425e-05, 9.96799 )
+z_index = 2
+emitting = false
+amount = 25
+lifetime = 0.2
+process_material = SubResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 13 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.03
+one_shot = true
+
+[node name="OffTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack = SubResource( 15 )
+anims/Charging = SubResource( 18 )
+anims/idle = SubResource( 19 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 24 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 25 )
+
+[node name="Laser" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = 5.0
+max_distance = 200.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="OffTimer" to="." method="_on_OffTimer_timeout"]

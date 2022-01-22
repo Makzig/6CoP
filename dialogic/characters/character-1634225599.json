@@ -1,0 +1,20 @@
+{
+	"color": "#ffffffff",
+	"description": "Антогонист (ли?) нашего повестования\n",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1634225599.json",
+	"mirror_portraits": false,
+	"name": "Demon",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 500,
+	"offset_y": -205,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Texturs/Devil.png"
+		}
+	],
+	"scale": 400
+}

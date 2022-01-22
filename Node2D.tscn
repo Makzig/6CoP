@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+var dialog = Dialogic.start(\"Пролог (1 часть)\")
+
+
+
+
+func _ready():
+	add_child(dialog)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )

@@ -1,0 +1,20 @@
+{
+	"color": "#ffffffff",
+	"description": "Герой нашего повестования",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1634224962.json",
+	"mirror_portraits": false,
+	"name": "James",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 150,
+	"offset_y": -205,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Texturs/bb776b6eea09e65b.png"
+		}
+	],
+	"scale": 400
+}

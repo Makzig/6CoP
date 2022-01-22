@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/Area_move.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 0.285087, 5.05444 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Down_move"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:moving")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 66 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Left_move"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:moving")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 66, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:moving")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Right_move"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:moving")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -66, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Up_move"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:moving")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -66 ) ]
+}
+
+[node name="Area_move" type="KinematicBody2D"]
+scale = Vector2( 3, 3 )
+script = ExtResource( 1 )
+
+[node name="Left" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2( -0.367018, -3.09359 )
+shape = SubResource( 1 )
+
+[node name="Right" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Right"]
+position = Vector2( 10.4076, -3.03915 )
+shape = SubResource( 1 )
+
+[node name="Up" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Up"]
+position = Vector2( 5.04293, 2.34962 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="Down" type="Area2D" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Down"]
+position = Vector2( 5.04293, -8.49318 )
+rotation = 1.57079
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+anims/Down_move = SubResource( 3 )
+anims/Left_move = SubResource( 4 )
+anims/RESET = SubResource( 5 )
+anims/Right_move = SubResource( 6 )
+anims/Up_move = SubResource( 7 )
+
+[connection signal="body_entered" from="Left" to="." method="_on_Left_body_entered"]
+[connection signal="body_entered" from="Right" to="." method="_on_Right_body_entered"]
+[connection signal="body_entered" from="Up" to="." method="_on_Up_body_entered"]
+[connection signal="body_entered" from="Down" to="." method="_on_Down_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

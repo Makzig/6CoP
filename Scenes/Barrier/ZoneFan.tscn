@@ -1,0 +1,185 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Texturs/Sprites2.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends StaticBody2D
+
+export var Wind_Speed = 1.0
+export var Area_Size = 1
+
+var wind = Vector2(0, 0)
+var winded = false
+var Body
+
+
+
+func _ready():
+	$Area2D/CollisionShape2D.shape.radius = 16 + Area_Size * 32
+	$AnimationPlayer.play(\"idle\")
+	$Particles2Ddown.lifetime = Area_Size * 0.3
+	$Particles2Dleft.lifetime = Area_Size * 0.3
+	$Particles2Dright.lifetime = Area_Size * 0.3
+	$Particles2Dup.lifetime = Area_Size * 0.3
+
+
+
+
+func _physics_process(_delta):
+	if winded == true:
+		$Area2D.look_at(Body.global_position)
+		wind = Vector2(cos($Area2D.global_rotation), sin($Area2D.global_rotation))
+		Body.position += wind * Wind_Speed
+
+
+
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group(\"Player\"):
+		yield(get_tree().create_timer(0.001), \"timeout\")
+		Body = body
+		winded = true
+
+func _on_Area2D_body_exited(body):
+		if body.is_in_group(\"Player\"):
+			winded = false
+"
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 14, 14 )
+
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0.56391, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 1
+emission_sphere_radius = 6.0
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 9 )
+
+[sub_resource type="Gradient" id=10]
+offsets = PoolRealArray( 0.661654, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=11]
+gradient = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+emission_shape = 1
+emission_sphere_radius = 6.0
+flag_disable_z = true
+direction = Vector3( -1, 0, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 11 )
+
+[sub_resource type="Gradient" id=13]
+offsets = PoolRealArray( 0.639098, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=14]
+gradient = SubResource( 13 )
+
+[sub_resource type="ParticlesMaterial" id=15]
+emission_shape = 1
+emission_sphere_radius = 6.0
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 14 )
+
+[sub_resource type="Gradient" id=16]
+offsets = PoolRealArray( 0.669173, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=17]
+gradient = SubResource( 16 )
+
+[sub_resource type="ParticlesMaterial" id=18]
+emission_shape = 1
+emission_sphere_radius = 6.0
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 150.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color_ramp = SubResource( 17 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 19, 20, 26, 26 )
+
+[sub_resource type="Animation" id=5]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ SubResource( 3 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=6]
+radius = 32.0
+
+[node name="ZoneFan" type="StaticBody2D"]
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 19 )
+
+[node name="Particles2Dright" type="Particles2D" parent="."]
+position = Vector2( 12, 0 )
+process_material = SubResource( 7 )
+
+[node name="Particles2Dleft" type="Particles2D" parent="."]
+position = Vector2( -12, 0 )
+process_material = SubResource( 12 )
+
+[node name="Particles2Dup" type="Particles2D" parent="."]
+position = Vector2( 0, -16 )
+process_material = SubResource( 15 )
+
+[node name="Particles2Ddown" type="Particles2D" parent="."]
+position = Vector2( 0, 10 )
+process_material = SubResource( 18 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = SubResource( 3 )
+region_rect = Rect2( 0, 16, 16, 16 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/idle = SubResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 6 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

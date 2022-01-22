@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/LevelMap.gd" type="Script" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.167
+anchor_top = 0.415
+anchor_right = 0.233
+anchor_bottom = 0.474
+margin_left = -0.640015
+margin_top = -0.200012
+margin_right = -63.36
+margin_bottom = -31.92
+rect_scale = Vector2( 2, 2 )
+focus_neighbour_left = NodePath("../Button6")
+text = "Level_1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+anchor_left = 0.267
+anchor_top = 0.415
+anchor_right = 0.333
+anchor_bottom = 0.467
+margin_left = -0.640015
+margin_top = -0.200012
+margin_right = -63.36
+margin_bottom = -24.36
+rect_scale = Vector2( 2, 2 )
+text = "Level_2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="."]
+anchor_left = 0.367
+anchor_top = 0.415
+anchor_right = 0.433
+anchor_bottom = 0.474
+margin_left = -0.640015
+margin_top = -0.200012
+margin_right = -63.36
+margin_bottom = -31.92
+rect_scale = Vector2( 2, 2 )
+text = "Level_3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="."]
+anchor_left = 0.467
+anchor_top = 0.415
+anchor_right = 0.533
+anchor_bottom = 0.474
+margin_left = -0.640015
+margin_top = -0.200012
+margin_right = -63.3601
+margin_bottom = -31.92
+rect_scale = Vector2( 2, 2 )
+text = "Level_4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="."]
+anchor_left = 0.567
+anchor_top = 0.415
+anchor_right = 0.633
+anchor_bottom = 0.474
+margin_left = -0.640015
+margin_top = -0.200012
+margin_right = -63.36
+margin_bottom = -31.92
+rect_scale = Vector2( 2, 2 )
+text = "Level_5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="."]
+anchor_left = 0.667
+anchor_top = 0.415
+anchor_right = 0.733
+anchor_bottom = 0.467
+margin_left = -0.640137
+margin_top = -0.200012
+margin_right = -63.3601
+margin_bottom = -24.36
+rect_scale = Vector2( 2, 2 )
+focus_neighbour_right = NodePath("../Button")
+text = "Level_6"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="Button5" to="." method="_on_Button5_pressed"]
+[connection signal="pressed" from="Button6" to="." method="_on_Button6_pressed"]

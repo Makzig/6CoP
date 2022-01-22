@@ -1,0 +1,221 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "default-theme.cfg"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Джей..\nДжеймс....."
+		},
+		{
+			"action": "join",
+			"character": "character-1637502670.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637502670.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Джеймс! Проснись! Ты здесь стоишь уже несколько часов, смотря лишь в одну точку!"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Зкук дождя, скользящего по надгробным плитам прерывается заглушенными в далеке ударами грома. В воздухе витает запах свежести и.. сигарет?"
+		},
+		{
+			"action": "join",
+			"character": "character-1634224962.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ах, да. Мужчина, стоящий в костюме рядом с недавно зарытой могилой. Затухшая неизестно насколько давно сигарета, которую по привычке держит во рту наш \"герой\".\nЖалкое подобие самого себя, не иначе. \nНо только дай надежду..."
+		},
+		{
+			"character": "character-1637502670.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Черт, дружище, хватит меня пугать. Я уже давно околел, да и ты, сомневаюсь, что чувствуешь себя сильно лучше. "
+		},
+		{
+			"character": "character-1637502670.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Может пойдем уже?"
+		},
+		{
+			"choice": "Есть ли смысл куда-то идти?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "А если и есть, то где взять силы?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Но надо же к чему-то стремиться?",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"choice": "Если только к несбыточному....",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1634224962.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "*Бормотание* "
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637502670.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Мысли все больше оттесняют вас от проиходящего. А думается лишь об одном. Что можно сделать?\nКогда происходит нечто страшное, что не под силу изменить - даже у атеистов мелькают мысли о молитве.\nИ здесь не то что в Бога повершь, хоть в Дьяволу пойдешь за спасением от бессилия."
+		},
+		{
+			"character": "character-1634224962.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "А может это поможет?"
+		},
+		{
+			"choice": "Молиться, надеясь на чудо",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"definition": "1637504521-648",
+			"event_id": "dialogic_014",
+			"operation": "=",
+			"random_lower_limit": 1,
+			"random_upper_limit": 1000,
+			"set_random": true,
+			"set_value": "1"
+		},
+		{
+			"choice": "Забыть об этом",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"condition": "",
+			"definition": "1637504521-648",
+			"event_id": "dialogic_012",
+			"value": "1000"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "*Открыта скрытая концовка*\nИногда - людям везет. Фортуна благоволит тем, кто в ней нуждается. Но скольким она помогла - и скольких она сгубила? \n*ТУК-ТУК-ТУК*\nТак, стоя под дождем, Алекс и Джейс неожиданно услышали еле заметный грохот в земле. Несколько минут судорожного копания влажной земли и вот, в мире случилось новое \"чудо\".  \nДанный инцидент был в центре внимания какое-то время, но далее - все затихло. \nДеньги же, получанные на столько неожиданной популярности были переданы безвозмездно близлежайшим храмам....\nНо все сложилось слишком сказачно, не находите?"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "...\nНа данное действие (или бездействие?) мир никак не ответил.\nВидимо, придется принять реальность."
+		},
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1634833127.cfg"
+		},
+		{
+			"condition": "!=",
+			"definition": "1637504521-648",
+			"event_id": "dialogic_012",
+			"value": "0"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "\"Чудо\"... \nЧудо редко случается просто так. Чаще - оно требует жертвы."
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "default-theme.cfg"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "*Герой едет домой*\n*ЗВУКИ АВАРИИ*"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3 - BETA",
+		"file": "timeline-1637502449.json",
+		"name": "Пролог (1 часть)"
+	}
+}
