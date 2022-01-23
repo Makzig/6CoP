@@ -7,7 +7,7 @@ atlas = ExtResource( 1 )
 region = Rect2( 106, 25, 12, 22 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6.05197, 6.49736 )
+extents = Vector2( 6.05197, 8.08576 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
@@ -15,5 +15,5 @@ extents = Vector2( 6.05197, 6.49736 )
 texture = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.0785084, 4.49476 )
+position = Vector2( 0.0785084, 6.08316 )
 shape = SubResource( 2 )

@@ -63,22 +63,6 @@ flip_h = true
 position = Vector2( -13.9384, 2.92247 )
 polygon = PoolVector2Array( 5, 12, 5, 21.5, 36, 6, 36, -4 )
 
-[node name="Up_left_colision" type="CollisionPolygon2D" parent="."]
-position = Vector2( 29.4803, 92.3974 )
-polygon = PoolVector2Array( -70.3965, -92.5849, -38.459, -92.3974, -38.459, -112.272 )
-
-[node name="Up_Right_colision" type="CollisionPolygon2D" parent="."]
-position = Vector2( 29.4803, 92.3974 )
-polygon = PoolVector2Array( -38.5215, -112.397, -38.459, -92.3349, -7.20904, -92.5849 )
-
-[node name="Down_left_colision" type="CollisionPolygon2D" parent="."]
-position = Vector2( 29.4803, 92.3974 )
-polygon = PoolVector2Array( -70.1155, -92.6609, -38.3979, -92.396, -38.4641, -77.4973 )
-
-[node name="Down_Right_colision" type="CollisionPolygon2D" parent="."]
-position = Vector2( 29.4803, 92.3974 )
-polygon = PoolVector2Array( -38.4641, -77.696, -7.20992, -92.3298, -38.5303, -92.2636 )
-
 [connection signal="area_entered" from="Up_left" to="." method="_on_Up_left_area_entered"]
 [connection signal="area_entered" from="Down_left" to="." method="_on_Down_left_area_entered"]
 [connection signal="area_entered" from="Up_Right" to="." method="_on_Up_Right_area_entered"]

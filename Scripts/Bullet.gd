@@ -33,7 +33,7 @@ func _physics_process(delta):
 		
 	elif Speed >= 300 or Speed <= -300:
 		$AnimationPlayer.play("Laser")
-		$Particles2D.emitting = false
+		$Particles2D.visible = false
 		
 
 #уничтожение пушки

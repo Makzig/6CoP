@@ -16,10 +16,6 @@ func _ready():
 		$Up_left/Sprite.visible = true
 		$Up_Right/Sprite2.visible = true
 		
-		$Down_Right_colision.disabled = false
-		$Down_left_colision.disabled = false
-		$Up_left_colision.disabled = false
-		$Up_Right_colision.disabled = false
 		
 		
 		
@@ -33,11 +29,6 @@ func _ready():
 		$Down_right/Sprite2.visible = false
 		$Up_left/Sprite.visible = true
 		$Up_Right/Sprite2.visible = false
-		
-		$Down_Right_colision.disabled = true
-		$Down_left_colision.disabled = true
-		$Up_left_colision.disabled = false
-		$Up_Right_colision.disabled = true
 	
 		
 		
@@ -52,10 +43,7 @@ func _ready():
 		$Up_left/Sprite.visible = false
 		$Up_Right/Sprite2.visible = false
 		
-		$Down_Right_colision.disabled = true
-		$Down_left_colision.disabled = false
-		$Up_left_colision.disabled = true
-		$Up_Right_colision.disabled = true
+
 		
 	if Edge == "Right_up":
 		$Down_left/CollisionPolygon2D2.disabled = true
@@ -68,10 +56,7 @@ func _ready():
 		$Up_left/Sprite.visible = false
 		$Up_Right/Sprite2.visible = true
 		
-		$Down_Right_colision.disabled = true
-		$Down_left_colision.disabled = true
-		$Up_left_colision.disabled = true
-		$Up_Right_colision.disabled = false
+
 		
 	if Edge == "Right_down":
 		$Down_left/CollisionPolygon2D2.disabled = true
@@ -84,11 +69,7 @@ func _ready():
 		$Up_left/Sprite.visible = false
 		$Up_Right/Sprite2.visible = false
 		
-		$Down_Right_colision.disabled = false
-		$Down_left_colision.disabled = true
-		$Up_left_colision.disabled = true
-		$Up_Right_colision.disabled = true
-		
+
 		
 		
 		

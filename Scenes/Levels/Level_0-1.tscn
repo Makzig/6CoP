@@ -120,7 +120,7 @@ Keys_needed = 2
 position = Vector2( 753, 627 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 8 )]
-position = Vector2( 526.979, 333 )
+position = Vector2( 522, 318 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 521, 929 )

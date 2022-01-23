@@ -4,8 +4,8 @@ export var moving = Vector2(0, 0)
 
 
 func _physics_process(_delta):
+# warning-ignore:return_value_discarded
 	move_and_slide(moving)
-	
 	
 
 

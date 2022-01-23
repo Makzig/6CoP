@@ -10,7 +10,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.19024
-height = 0.0
+height = 5.45339
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
@@ -322,7 +322,6 @@ collision_mask = 5
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.0625, 2.3125 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
