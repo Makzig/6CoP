@@ -193,7 +193,7 @@ scale = Vector2( 0.333333, 0.333333 )
 Edge = "Left_down"
 
 [node name="Torch" parent="." instance=ExtResource( 10 )]
-position = Vector2( 115, 455 )
+position = Vector2( 114, 467 )
 
 [node name="Torch2" parent="." instance=ExtResource( 10 )]
 position = Vector2( 818, 307 )
